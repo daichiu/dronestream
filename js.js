@@ -8,12 +8,14 @@ $(document).ready(function(){
         crossDomain: true,
         dataType: 'jsonp',
         success: function(result) {
-            console.log(result)
-
+            console.log(result);
+            drone(result)
         },
         error: function() {
             alert('Failed!');
         }
     });
 });
+function drone(result){
 
+}
