@@ -17,5 +17,9 @@ $(document).ready(function(){
     });
 });
 function drone(result){
-
+ for(var i = 0; i<result.strike.length;i++){
+   if(result.strike[i].country === "Somalia"){
+       console.log(result.strike[i])
+   }
+ }
 }
