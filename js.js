@@ -1,6 +1,3 @@
-/**
- * Created by h205p2 on 5/18/17.
- */
 $(document).ready(function(){
     $.ajax({
         url: ["http://api.dronestre.am/data"],
