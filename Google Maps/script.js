@@ -17,7 +17,7 @@
     });
 })*/
 
-
+//default map, Berkeley
 function myMap() {
     var mapProp = {
         center:new google.maps.LatLng(37.8716, -122.2727),
@@ -26,6 +26,7 @@ function myMap() {
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 
+//take address from HTML textbox and center map and place marker at that location
 function getMapAddress() {
     var geocoder = new google.maps.Geocoder();
     var address = document.getElementById("address").value;
