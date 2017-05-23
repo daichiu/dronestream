@@ -27,15 +27,24 @@ function myMap() {
 }
 
 function getMapAddress() {
-    var geocoder = new google.maps.GeoCoder();
+    var geocoder = new google.maps.Geocoder();
     var address = document.getElementById("address").value;
-    geocoder.geocode(
-        {
-            "address": address,
-            function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK){
-                    console.log(result);
-                }
+    geocoder.geocode({"address": address},function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                console.log(results);
+
+                var resultsMap = {
+                    center: new google.maps.LatLng(0,0),
+                    zoom: 15,
+                };
+
+                var map = new google.maps.Map(document.getElementById("googleMap"), resultsMap);
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    }
+                )
             }
         }
     );
